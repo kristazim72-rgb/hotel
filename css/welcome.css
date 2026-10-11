@@ -1,0 +1,39 @@
+body.welcome-page {
+  background: linear-gradient(135deg, var(--neutral-50), var(--sun-50));
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.welcome-container {
+  max-width: 600px;
+  background: var(--neutral-0);
+  padding: 4rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border: 1px solid var(--neutral-200);
+}
+
+.welcome-container .logo {
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-container h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--neutral-900);
+}
+
+.welcome-container h1 span {
+  color: var(--terracotta-500);
+  font-style: italic;
+}
+
+.welcome-container p {
+  color: var(--neutral-600);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
