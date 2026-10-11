@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages - Maison Soleil</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="dashboard.html" class="logo">
+      <span class="sun-icon">☀</span>
+      <div>
+        <div style="font-family: var(--font-serif); font-style: italic;">Maison</div>
+        <div style="font-weight: 600; letter-spacing: 0.05em;">Soleil</div>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="dashboard.html"><span>🧳</span> Your stay <span class="badge">1</span></a></li>
+      <li><a href="house.html"><span>🏠</span> The house</a></li>
+      <li><a href="town.html"><span>📍</span> Around town</a></li>
+      <li><a href="breakfast.html"><span>🥐</span> Breakfast</a></li>
+      <li><a href="messages.html"><span>✉️</span> Messages</a></li>
+    </ul>
+    <div class="sidebar-bottom">
+      <div class="weather-widget">
+        <div class="weather-label">Today in Cassis</div>
+        <div class="weather-temp">27°</div>
+        <div class="weather-desc">Sunny · light breeze</div>
+      </div>
+      <div class="copyright">
+        Est. 1987<br>Maison Soleil · 12 Rue des Oliviers · Cassis<br>© 2026 Maison Soleil
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content messages-page">
+    <header class="header-actions">
+      <div class="header-text">
+        <p>Inbox</p>
+        <h1>Your <span>Messages.</span></h1>
+      </div>
+    </header>
+
+    <!-- Chat Interface -->
+    <div class="chat-container">
+      <!-- Sidebar (Conversations) -->
+      <div class="chat-sidebar">
+        <div class="chat-user active">
+          <div class="avatar" style="background: var(--terracotta-400);">M</div>
+          <div class="user-info">
+            <h5>Margaux (Host)</h5>
+            <p>We're so glad you're coming!</p>
+          </div>
+        </div>
+        <div class="chat-user">
+          <div class="avatar" style="background: var(--blue-500);">C</div>
+          <div class="user-info">
+            <h5>Concierge</h5>
+            <p>Your taxi is confirmed for 2 PM.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Main Area -->
+      <div class="chat-main">
+        <!-- Chat Messages -->
+        <div class="chat-messages">
+          <div class="message received">
+            <div class="bubble">Hi Lucia, we're looking forward to your arrival! Let me know if you need a taxi from the station.</div>
+            <span class="time">10:30 AM</span>
+          </div>
+          <div class="message sent">
+            <div class="bubble">Thank you! We'll be arriving around 3 PM. A taxi would be great.</div>
+            <span class="time">10:32 AM</span>
+          </div>
+          <div class="message received">
+            <div class="bubble">Perfect! I'll arrange a taxi for 2:45 PM. See you soon!</div>
+            <span class="time">10:35 AM</span>
+          </div>
+        </div>
+
+        <!-- Quick Replies -->
+        <div class="quick-replies">
+          <button class="chip">Need a taxi</button>
+          <button class="chip">Late check-in</button>
+          <button class="chip">Restaurant booking</button>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input">
+          <input type="text" placeholder="Type a message...">
+          <button class="btn btn-primary">Send</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
