@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Around Town - Maison Soleil</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="dashboard.html" class="logo">
+      <span class="sun-icon">☀</span>
+      <div>
+        <div style="font-family: var(--font-serif); font-style: italic;">Maison</div>
+        <div style="font-weight: 600; letter-spacing: 0.05em;">Soleil</div>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="dashboard.html"><span>🧳</span> Your stay <span class="badge">1</span></a></li>
+      <li><a href="house.html"><span>🏠</span> The house</a></li>
+      <li><a href="town.html"><span>📍</span> Around town</a></li>
+      <li><a href="breakfast.html"><span>🥐</span> Breakfast</a></li>
+      <li><a href="messages.html"><span>✉️</span> Messages</a></li>
+    </ul>
+    <div class="sidebar-bottom">
+      <div class="weather-widget">
+        <div class="weather-label">Today in Cassis</div>
+        <div class="weather-temp">27°</div>
+        <div class="weather-desc">Sunny · light breeze</div>
+      </div>
+      <div class="copyright">
+        Est. 1987<br>Maison Soleil · 12 Rue des Oliviers · Cassis<br>© 2026 Maison Soleil
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="header-actions">
+      <div class="header-text">
+        <p>Local Guide</p>
+        <h1>Around <span>Town.</span></h1>
+      </div>
+    </header>
+
+    <!-- Filter Chips -->
+    <div class="filter-chips">
+      <button class="chip-btn active" data-filter="all" onclick="filterPlaces('all')">All</button>
+      <button class="chip-btn" data-filter="restaurant" onclick="filterPlaces('restaurant')">Restaurants</button>
+      <button class="chip-btn" data-filter="beach" onclick="filterPlaces('beach')">Beaches</button>
+      <button class="chip-btn" data-filter="market" onclick="filterPlaces('market')">Markets</button>
+    </div>
+
+    <!-- Places Grid -->
+    <div class="places-grid">
+      
+          <!-- ================= RESTAURANTS (4) ================= -->
+      <div class="place-card" data-category="restaurant">
+        <img src="img/restaurant.jpg" alt="Le Clos des Oliviers">
+        <div class="place-body">
+          <h4>Le Clos des Oliviers</h4>
+          <div class="meta-info">
+            <span class="distance">5 min walk</span>
+            <span class="price-range">Avg. €60 - €90</span>
+          </div>
+          <p>Authentic Provençal cuisine with a stunning terrace view of the vineyards.</p>
+        </div>
+      </div>
+
+      <div class="place-card" data-category="restaurant">
+        <img src="img/restaurant1.jpg" alt="La Villa Madie">
+        <div class="place-body">
+          <h4>La Villa Madie</h4>
+          <div class="meta-info">
+            <span class="distance">10 min drive</span>
+            <span class="price-range">Avg. €150 - €250</span>
+          </div>
+          <p>Michelin-starred dining with a panoramic view of the Calanques.</p>
+        </div>
+      </div>
+
+      <div class="place-card" data-category="restaurant">
+        <img src="img/restaurant2.jpg" alt="Chez Gilbert">
+        <div class="place-body">
+          <h4>Chez Gilbert</h4>
+          <div class="meta-info">
+            <span class="distance">8 min walk</span>
+            <span class="price-range">Avg. €30 - €50</span>
+          </div>
+          <p>A local favorite for fresh seafood and traditional bouillabaisse.</p>
+        </div>
+      </div>
+
+      <div class="place-card" data-category="restaurant">
+        <img src="img/restaurant3.jpg" alt="Le Bonaparte">
+        <div class="place-body">
+          <h4>Le Bonaparte</h4>
+          <div class="meta-info">
+            <span class="distance">6 min walk</span>
+            <span class="price-range">Avg. €25 - €45</span>
+          </div>
+          <p>Casual bistro offering great pizzas and a lively atmosphere on the port.</p>
+        </div>
+      </div>
+
+      <!-- ================= BEACHES (4) ================= -->
+      <div class="place-card" data-category="beach">
+        <img src="img/beach.jpg" alt="Plage de la Grande Mer">
+        <div class="place-body">
+          <h4>Plage de la Grande Mer</h4>
+          <span class="distance">10 min drive · Free</span>
+          <p>The main beach in Cassis. Perfect for swimming and sunbathing. Get there early.</p>
+        </div>
+      </div>
+
+      <div class="place-card" data-category="beach">
+        <img src="img/beach1.jpg" alt="Plage du Bestouan">
+        <div class="place-body">
+          <h4>Plage du Bestouan</h4>
+          <span class="distance">12 min walk · Free</span>
+          <p>A smaller, pebbled beach known for its crystal-clear water and snorkeling.</p>
+        </div>
+      </div>
+
+      <div class="place-card" data-category="beach">
+        <img src="img/beach2.jpg" alt="Calanque de Port-Miou">
+        <div class="place-body">
+          <h4>Calanque de Port-Miou</h4>
+          <span class="distance">20 min drive · Free</span>
+          <p>A stunning natural fjord. Great for hiking and photography.</p>
+        </div>
+      </div>
+
+      <div class="place-card" data-category="beach">
+        <img src="img/beach3.jpg" alt="Plage de l'Arène">
+        <div class="place-body">
+          <h4>Plage de l'Arène</h4>
+          <span class="distance">8 min walk · Free</span>
+          <p>Located right next to the town center. Convenient and family-friendly.</p>
+        </div>
+      </div>
+
+      <!-- ================= MARKETS (4) ================= -->
+      <div class="place-card" data-category="market">
+        <img src="img/market.jpg" alt="Marché de Cassis">
+        <div class="place-body">
+          <h4>Marché de Cassis</h4>
+          <span class="distance">8 min walk · Free</span>
+          <p>Open every Wednesday and Friday morning. Fresh produce, cheese, and olives.</p>
+        </div>
+      </div>
+
+      <div class="place-card" data-category="market">
+        <img src="img/market1.jpg" alt="Marché aux Poissons">
+        <div class="place-body">
+          <h4>Marché aux Poissons</h4>
+          <span class="distance">7 min walk · Free</span>
+          <p>Daily fish market on the port. Get the catch of the day straight from the boats.</p>
+        </div>
+      </div>
+
+      <div class="place-card" data-category="market">
+        <img src="img/market2.jpg" alt="Marché Provençal">
+        <div class="place-body">
+          <h4>Marché Provençal</h4>
+          <span class="distance">9 min walk · Free</span>
+          <p>Lavender, herbs, and local crafts. A great spot for souvenirs.</p>
+        </div>
+      </div>
+
+      <div class="place-card" data-category="market">
+        <img src="img/market3.jpg" alt="Marché Bio">
+        <div class="place-body">
+          <h4>Marché Bio</h4>
+          <span class="distance">10 min walk · Free</span>
+          <p>Organic market held every Tuesday. Perfect for health-conscious travelers.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- CRUCIAL: This script tag makes the filter buttons work -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
