@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Room - Maison Soleil</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+  <main class="main-content" style="margin-left: 0; width: 100%; display: flex; justify-content: center; align-items: center;">
+    <div class="booking-container">
+      <h2>Select your room</h2>
+      <p class="subtitle">Step 2 of 3 · Choose where you'll rest</p>
+
+      <div class="selection-grid">
+        <!-- Room 1 -->
+        <div class="selection-card" onclick="selectRoom(this, 'room1')">
+          <img src="img/r1.jpg" alt="Le Pigeonnier">
+          <div class="card-body">
+            <h4>Le Pigeonnier</h4>
+            <div class="price">€120 / night</div>
+            <p>A charming, rustic room perfect for solo travelers or couples on a budget.</p>
+          </div>
+        </div>
+
+        <!-- Room 2 -->
+        <div class="selection-card" onclick="selectRoom(this, 'room2')">
+          <img src="img/r2.jpg" alt="La Garrigue">
+          <div class="card-body">
+            <h4>La Garrigue</h4>
+            <div class="price">€145 / night</div>
+            <p>A cozy room overlooking the olive grove. Features a queen bed and a private terrace.</p>
+          </div>
+        </div>
+
+        <!-- Room 3 -->
+        <div class="selection-card" onclick="selectRoom(this, 'room3')">
+          <img src="img/r3.jpg" alt="L'Olivier">
+          <div class="card-body">
+            <h4>L'Olivier</h4>
+            <div class="price">€155 / night</div>
+            <p>Our largest suite with a king bed, bathtub, and stunning views of the Cassis coastline.</p>
+          </div>
+        </div>
+
+        <!-- Room 4 -->
+        <div class="selection-card" onclick="selectRoom(this, 'room4')">
+          <img src="img/r4.jpg" alt="Le Figuier">
+          <div class="card-body">
+            <h4>Le Figuier</h4>
+            <div class="price">€185 / night</div>
+            <p>Spacious room with a private balcony overlooking the fig trees and the sea.</p>
+          </div>
+        </div>
+
+        <!-- Room 5 -->
+        <div class="selection-card" onclick="selectRoom(this, 'room5')">
+          <img src="img/r5.jpg" alt="La Terrasse">
+          <div class="card-body">
+            <h4>La Terrasse</h4>
+            <div class="price">€210 / night</div>
+            <p>Enjoy direct access to the main terrace and a large en-suite bathroom.</p>
+          </div>
+        </div>
+
+        <!-- Room 6 -->
+        <div class="selection-card" onclick="selectRoom(this, 'room6')">
+          <img src="img/r6.jpg" alt="La Villa">
+          <div class="card-body">
+            <h4>La Villa</h4>
+            <div class="price">€250 / night</div>
+            <p>The ultimate luxury. A private villa with its own pool and garden.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-nav">
+        <a href="booking.html" class="btn">Back</a>
+        <button onclick="saveStep2()" class="btn btn-primary">Next: Breakfast</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/booking.js"></script>
+  <script>
+    let selectedRoom = 'room2'; // Default
+
+    function selectRoom(element, roomId) {
+      document.querySelectorAll('.selection-card').forEach(card => card.classList.remove('selected'));
+      element.classList.add('selected');
+      selectedRoom = roomId;
+    }
+
+    function saveStep2() {
+      saveBookingData('room', selectedRoom);
+      window.location.href = 'breakfast.html';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedRoom = getBookingData('room', 'room2');
+      const cards = document.querySelectorAll('.selection-card');
+      cards.forEach(card => {
+        if(card.getAttribute('onclick').includes(savedRoom)) {
+          card.classList.add('selected');
+          selectedRoom = savedRoom;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

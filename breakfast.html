@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breakfast Menu - Maison Soleil</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+  <main class="main-content" style="margin-left: 0; width: 100%; display: flex; justify-content: center; align-items: center;">
+    <div class="booking-container">
+      <h2>Morning delights</h2>
+      <p class="subtitle">Step 3 of 3 · Choose your breakfast experience</p>
+
+      <div class="selection-grid">
+        <!-- Option 1 -->
+        <div class="selection-card" onclick="selectBreakfast(this, 'b1')">
+          <img src="img/b1.jpg" alt="Quick Start">
+          <div class="card-body">
+            <h4>Quick Start</h4>
+            <div class="price">€18 / person / day</div>
+            <p>Fresh fruit, yogurt, and a choice of tea or coffee. Perfect for early risers.</p>
+          </div>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="selection-card" onclick="selectBreakfast(this, 'b2')">
+          <img src="img/b2.jpg" alt="Continental">
+          <div class="card-body">
+            <h4>Continental</h4>
+            <div class="price">€24 / person / day</div>
+            <p>Fresh figs, Marseille honey, pain au levain, and espresso served on the terrace.</p>
+          </div>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="selection-card" onclick="selectBreakfast(this, 'b3')">
+          <img src="img/b3.jpg" alt="Vegan Delight">
+          <div class="card-body">
+            <h4>Vegan Delight</h4>
+            <div class="price">€28 / person / day</div>
+            <p>Avocado toast, almond milk yogurt, fresh fruit, and herbal teas.</p>
+          </div>
+        </div>
+
+        <!-- Option 4 -->
+        <div class="selection-card" onclick="selectBreakfast(this, 'b4')">
+          <img src="img/b4.jpg" alt="Provençal Feast">
+          <div class="card-body">
+            <h4>Provençal Feast</h4>
+            <div class="price">€35 / person / day</div>
+            <p>Local cheeses, charcuterie, fresh pastries, and a glass of chilled rosé.</p>
+          </div>
+        </div>
+
+        <!-- Option 5 -->
+        <div class="selection-card" onclick="selectBreakfast(this, 'b5')">
+          <img src="img/b5.jpg" alt="Mediterranean">
+          <div class="card-body">
+            <h4>Mediterranean</h4>
+            <div class="price">€42 / person / day</div>
+            <p>Olives, feta, tomatoes, cucumber, and warm pita bread with hummus.</p>
+          </div>
+        </div>
+
+        <!-- Option 6 -->
+        <div class="selection-card" onclick="selectBreakfast(this, 'b6')">
+          <img src="img/b6.jpg" alt="Champagne Brunch">
+          <div class="card-body">
+            <h4>Champagne Brunch</h4>
+            <div class="price">€50 / person / day</div>
+            <p>Our most luxurious option. Includes smoked salmon, caviar, and a glass of Champagne.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-nav">
+        <a href="rooms.html" class="btn">Back to Rooms</a>
+        <button onclick="saveBreakfast()" class="btn btn-primary">Confirm & View Dashboard</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/booking.js"></script>
+  <script>
+    let selectedBreakfast = 'b2'; // Default
+
+    function selectBreakfast(element, type) {
+      document.querySelectorAll('.selection-card').forEach(card => card.classList.remove('selected'));
+      element.classList.add('selected');
+      selectedBreakfast = type;
+    }
+
+    function saveBreakfast() {
+      saveBookingData('breakfast', selectedBreakfast);
+      window.location.href = 'dashboard.html';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = getBookingData('breakfast', 'b2');
+      const cards = document.querySelectorAll('.selection-card');
+      cards.forEach(card => {
+        if(card.getAttribute('onclick').includes(saved)) {
+          card.classList.add('selected');
+          selectedBreakfast = saved;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

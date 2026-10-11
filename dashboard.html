@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Soleil - Your Stay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="dashboard.html" class="logo">
+      <span class="sun-icon">☀</span>
+      <div>
+        <div style="font-family: var(--font-serif); font-style: italic;">Maison</div>
+        <div style="font-weight: 600; letter-spacing: 0.05em;">Soleil</div>
+      </div>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="dashboard.html"><span>🧳</span> Your stay <span class="badge">1</span></a></li>
+      <li><a href="house.html"><span>🏠</span> The house</a></li>
+      <li><a href="town.html"><span>📍</span> Around town</a></li>
+      <li><a href="breakfast.html"><span>🥐</span> Breakfast</a></li>
+      <li><a href="messages.html"><span>✉️</span> Messages</a></li>
+    </ul>
+
+    <div class="sidebar-bottom">
+      <div class="weather-widget">
+        <div class="weather-label">Today in Cassis</div>
+        <div class="weather-temp">27°</div>
+        <div class="weather-desc">Sunny · light breeze</div>
+      </div>
+      <div class="copyright">
+        Est. 1987<br>
+        Maison Soleil · 12 Rue des Oliviers · Cassis<br>
+        © 2026 Maison Soleil
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="header-actions">
+      <div class="header-text">
+        <p>Booking · Confirmed</p>
+        <h1>Bienvenue, <span>Lucia.</span></h1>
+      </div>
+      <div class="actions">
+        <button class="btn" onclick="window.print()">Print receipt</button>
+        <button class="btn btn-primary">Add to calendar</button>
+      </div>
+    </header>
+
+    <!-- Hero Cards Section -->
+    <section class="hero-cards">
+      
+      <!-- Card 1: Receipt (Background) -->
+      <div class="receipt">
+        <div class="receipt-header">
+          <span>Receipt</span>
+          <span>№ MS-2026 0421-AH</span>
+        </div>
+        <div class="receipt-title">Your stay</div>
+        
+        <div class="dates">
+          <div>
+            <div class="date-label">Check in</div>
+            <div class="date-value">25 Apr</div>
+            <div class="date-sub">Saturday · 15:00</div>
+          </div>
+          <div>
+            <div class="date-label">Check out</div>
+            <div class="date-value">29 Apr</div>
+            <div class="date-sub">Wednesday · 11:00</div>
+          </div>
+        </div>
+
+        <div class="line-items">
+          <!-- Dynamically populated by dashboard.js -->
+        </div>
+
+        <div class="total">
+          <span>Total paid</span>
+          <span class="total-amount">€ 0.00</span>
+        </div>
+
+        <div class="barcode-container">
+          <div class="barcode"></div>
+          <div class="receipt-footer">Paid · Wise · GBP</div>
+        </div>
+      </div>
+
+      <!-- Card 2: Welcome Card (Foreground) -->
+      <div class="welcome-card">
+        <span class="sun-icon">☀</span>
+        <div class="welcome-label">Welcome Card</div>
+        <div class="welcome-title">
+          A note from your host,
+          <span>Margaux.</span>
+        </div>
+        <div class="welcome-message">
+          We're so glad you're coming. The shutters will be open, the lemonade cold, and the cat – Poivre – pretending not to notice you.
+        </div>
+        <div class="room-info">
+          Room
+          <div class="room-name">La Garrigue</div>
+        </div>
+      </div>
+
+      <div class="hover-hint">◆ Hover to fan ◆</div>
+    </section>
+
+    <!-- Info Cards Section -->
+    <section class="info-cards">
+      <!-- Arrival -->
+      <div class="info-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <div class="icon-box arrival">🔑</div>
+            <span class="card-label">Arrival</span>
+          </div>
+          <span class="card-number arrival">01</span>
+        </div>
+        <h3>Check-in from 15:00</h3>
+        <div class="subtitle">Sat, 25 April</div>
+        <p>Ring the brass bell by the blue door. If we're at the market, the key is in the terracotta pot by the olive tree.</p>
+      </div>
+
+      <!-- Wi-Fi -->
+      <div class="info-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <div class="icon-box wifi">📶</div>
+            <span class="card-label">Wi-Fi</span>
+          </div>
+          <span class="card-number wifi">02</span>
+        </div>
+        <h3>Le Soleil · Guest</h3>
+        <div class="subtitle">Password below</div>
+        <div class="wifi-details">
+          <div class="wifi-row">
+            <span>Network</span>
+            <span class="wifi-value">Le Soleil · Guest</span>
+          </div>
+          <div class="wifi-row">
+            <span>Password</span>
+            <span class="wifi-value">
+              soleil-2026 
+              <button class="copy-btn" onclick="copyWifi()">COPY</button>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breakfast -->
+      <div class="info-card">
+        <div class="card-header">
+          <div class="card-title-group">
+            <div class="icon-box breakfast">🍽️</div>
+            <span class="card-label">Breakfast</span>
+          </div>
+          <span class="card-number breakfast">03</span>
+        </div>
+        <h3>Served 8 – 10:30</h3>
+        <div class="subtitle">On the terrace</div>
+        <p>Fresh figs, Marseille honey, pain au levain, and espresso. Gluten-free option? Leave a note the night before.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/booking.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
