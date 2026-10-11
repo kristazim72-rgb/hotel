@@ -1,0 +1,244 @@
+/* Booking Pages Global */
+.booking-container {
+  max-width: 900px; /* Increased to fit 3 cards */
+  margin: 0 auto;
+  background: var(--neutral-0);
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid var(--neutral-200);
+}
+
+.booking-container h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.booking-container .subtitle {
+  color: var(--neutral-600);
+  margin-bottom: 2.5rem;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--neutral-700);
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--neutral-400);
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--neutral-900);
+  background: var(--neutral-50);
+  transition: border 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--terracotta-500);
+  background: var(--neutral-0);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Room & Breakfast Selection Cards */
+.selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.selection-card {
+  border: 2px solid var(--neutral-200);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--neutral-0);
+  display: flex;
+  flex-direction: column;
+}
+
+.selection-card:hover {
+  border-color: var(--terracotta-400);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.selection-card.selected {
+  border-color: var(--terracotta-500);
+  background: var(--sun-50);
+}
+
+.selection-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.selection-card .card-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.selection-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.selection-card .price {
+  font-family: var(--font-mono);
+  color: var(--terracotta-500);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.selection-card p {
+  font-size: 0.85rem;
+  color: var(--neutral-600);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* Navigation Buttons - FIXED VERTICAL STRETCHING */
+.booking-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* THIS FIXES THE STRETCHING */
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--neutral-200);
+}
+
+.booking-nav .btn {
+  width: auto; /* Prevents full-width stretching */
+  min-width: 180px;
+}
+
+/*
+   CUSTOM DROPDOWN (Theme Selector Style)
+   */
+.custom-select-wrapper {
+  position: relative;
+  user-select: none;
+  width: 100%;
+}
+
+/* The closed state (box with chevron) */
+.custom-select-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* Top, Right (1.5rem gives space for the arrow), Bottom, Left */
+  padding: 0.8rem 1.5rem 0.8rem 1rem; 
+  
+  border: 1px solid var(--neutral-400);
+  border-radius: 12px;
+  background: var(--neutral-0);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--neutral-900);
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.custom-select-trigger:hover {
+  border-color: var(--neutral-500);
+}
+
+.custom-select-trigger:focus {
+  outline: none;
+  border-color: var(--terracotta-500);
+  box-shadow: 0 0 0 3px rgba(214, 96, 57, 0.15);
+}
+
+.custom-select-trigger .arrow {
+  font-size: 0.7rem;
+  color: var(--neutral-600);
+  transition: transform 0.3s ease;
+}
+
+.custom-select-wrapper.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* The open dropdown list */
+.custom-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--neutral-0);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin-top: 0.5rem; /* This creates the gap seen in your image */
+  padding: 0.5rem;
+  z-index: 100;
+  display: none;
+  list-style: none;
+  border: 1px solid var(--neutral-200);
+}
+
+.custom-select-wrapper.open .custom-options {
+  display: block;
+}
+
+/* Individual options inside the dropdown */
+.custom-option {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--neutral-900);
+}
+
+.custom-option:hover {
+  background: var(--neutral-100);
+}
+
+/* The highlighted/selected option (the gray background in your image) */
+.custom-option.selected {
+  background: var(--neutral-200); /* Matches the gray highlight */
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .booking-container {
+    padding: 1.5rem;
+  }
+  .booking-nav {
+    flex-direction: column-reverse; /* Stacks buttons nicely on mobile */
+    gap: 1rem;
+  }
+  .booking-nav .btn {
+    width: 100%; /* Full width on mobile for easier tapping */
+  }
+}
